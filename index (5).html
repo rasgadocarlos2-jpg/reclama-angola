@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-AO">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reclama Angola</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+        body { background: #f9fafb; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .btn { padding: 12px 24px; border-radius: 8px; font-weight: 600; border: none; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+        .btn-primary { background: #1e3a8a; color: white; }
+        .btn-secondary { background: white; color: #1e3a8a; border: 2px solid #1e3a8a; }
+        .card { background: white; border-radius: 12px; padding: 24px; border: 1px solid #e5e7eb; }
+        .header { background: white; border-bottom: 1px solid #e5e7eb; padding: 16px 0; position: sticky; top: 0; z-index: 50; }
+        .hero { padding: 80px 20px; text-align: center; background: linear-gradient(to bottom, #f9fafb, white); }
+        .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; }
+        input { width: 100%; padding: 12px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 16px; }
+        .badge { padding: 4px 12px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+        .badge-success { background: #d1fae5; color: #065f46; }
+    </style>
+</head>
+<body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+        const { useState } = React;
+
+        function App() {
+            const [page, setPage] = useState('home');
+
+            return (
+                <div>
+                    {/* Header */}
+                    <div className="header">
+                        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                            <div onClick={() => setPage('home')} style={{ display: 'flex', alignItems: 'center', gap: '12px', cursor: 'pointer' }}>
+                                <div style={{ width: '48px', height: '48px', background: '#1e3a8a', borderRadius: '8px', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'white', fontWeight: 'bold', fontSize: '20px' }}>RA</div>
+                                <div>
+                                    <div style={{ fontWeight: 'bold', fontSize: '20px', color: '#1e3a8a' }}>Reclama Angola</div>
+                                    <div style={{ fontSize: '12px', color: '#6b7280' }}>Infraestrutura de Confiança</div>
+                                </div>
+                            </div>
+                            <button className="btn btn-primary" onClick={() => alert('Demo: Funcionalidade em desenvolvimento')}>
+                                Fazer Reclamação
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* Content */}
+                    {page === 'home' && <HomePage setPage={setPage} />}
+                    {page === 'empresas' && <EmpresasPage setPage={setPage} />}
+                </div>
+            );
+        }
+
+        function HomePage({ setPage }) {
+            return (
+                <div>
+                    {/* Hero */}
+                    <div className="hero">
+                        <div className="container">
+                            <h1 style={{ fontSize: '48px', fontWeight: 'bold', color: '#1e3a8a', marginBottom: '24px', lineHeight: '1.2' }}>
+                                A INFRAESTRUTURA DE CONFIANÇA<br />
+                                E REPUTAÇÃO EMPRESARIAL DE ANGOLA
+                            </h1>
+                            <p style={{ fontSize: '20px', color: '#374151', marginBottom: '40px' }}>
+                                Conectamos consumidores e empresas para construir um mercado mais transparente
+                            </p>
+                            
+                            <input type="text" placeholder="🔍 Pesquisar empresa..." style={{ maxWidth: '600px', margin: '0 auto 32px', padding: '16px', fontSize: '18px' }} />
+                            
+                            <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap', marginBottom: '48px' }}>
+                                <button className="btn btn-primary" style={{ fontSize: '16px' }}>
+                                    📝 Fazer Reclamação
+                                </button>
+                                <button className="btn btn-secondary" style={{ fontSize: '16px' }}>
+                                    🏢 Reivindique sua Empresa
+                                </button>
+                            </div>
+
+                            {/* Stats */}
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '32px', maxWidth: '800px', margin: '0 auto' }}>
+                                <div style={{ textAlign: 'center' }}>
+                                    <div style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a' }}>12,483</div>
+                                    <div style={{ fontSize: '14px', color: '#6b7280' }}>Reclamações registadas</div>
+                                </div>
+                                <div style={{ textAlign: 'center' }}>
+                                    <div style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a' }}>847</div>
+                                    <div style={{ fontSize: '14px', color: '#6b7280' }}>Empresas listadas</div>
+                                </div>
+                                <div style={{ textAlign: 'center' }}>
+                                    <div style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a' }}>82%</div>
+                                    <div style={{ fontSize: '14px', color: '#6b7280' }}>Taxa de resolução</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Trust Badge */}
+                    <div style={{ padding: '48px 20px', background: 'white', borderTop: '1px solid #e5e7eb', borderBottom: '1px solid #e5e7eb' }}>
+                        <div className="container" style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '48px', marginBottom: '16px' }}>🛡️</div>
+                            <h3 style={{ fontSize: '24px', fontWeight: 'bold', color: '#1f2937', marginBottom: '8px' }}>
+                                Infraestrutura Reconhecida e Confiável
+                            </h3>
+                            <p style={{ color: '#6b7280' }}>Plataforma independente e transparente desde 2024</p>
+                        </div>
+                    </div>
+
+                    {/* Para Consumidores */}
+                    <div style={{ padding: '80px 20px' }}>
+                        <div className="container">
+                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+                                <h2 style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a', marginBottom: '16px' }}>
+                                    PARA CONSUMIDORES
+                                </h2>
+                                <p style={{ fontSize: '20px', color: '#374151' }}>Faça sua voz ser ouvida</p>
+                            </div>
+
+                            <div className="grid-3" style={{ marginBottom: '32px' }}>
+                                {[
+                                    { icon: '📝', title: 'Registe', desc: 'Faça sua reclamação em 2 min' },
+                                    { icon: '⏱️', title: 'Empresa', desc: 'Notificada e responde em até 7 dias' },
+                                    { icon: '💬', title: 'Resolva', desc: 'Acompanhe em tempo real' },
+                                    { icon: '⭐', title: 'Avalie', desc: 'Ajude outros consumidores' }
+                                ].map((step, i) => (
+                                    <div key={i} className="card" style={{ textAlign: 'center' }}>
+                                        <div style={{ fontSize: '40px', marginBottom: '16px' }}>{step.icon}</div>
+                                        <h3 style={{ fontSize: '18px', fontWeight: 'bold', marginBottom: '8px' }}>{step.title}</h3>
+                                        <p style={{ fontSize: '14px', color: '#6b7280' }}>{step.desc}</p>
+                                    </div>
+                                ))}
+                            </div>
+
+                            <div style={{ background: '#d1fae5', borderRadius: '12px', padding: '24px', marginBottom: '32px' }}>
+                                <div style={{ color: '#065f46' }}>
+                                    <div style={{ marginBottom: '12px' }}>✓ Sem cadastro prévio para reclamar</div>
+                                    <div style={{ marginBottom: '12px' }}>✓ 82% das empresas respondem em 48h</div>
+                                    <div>✓ Suas avaliações impactam o Trust Score público</div>
+                                </div>
+                            </div>
+
+                            <div style={{ textAlign: 'center' }}>
+                                <button className="btn btn-primary" style={{ fontSize: '18px', padding: '16px 32px' }}>
+                                    Fazer Reclamação Agora
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Empresas Section */}
+                    <div style={{ padding: '80px 20px', background: 'white' }}>
+                        <div className="container">
+                            <div style={{ textAlign: 'center', marginBottom: '48px' }}>
+                                <h2 style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a', marginBottom: '16px' }}>
+                                    VER EMPRESAS
+                                </h2>
+                                <p style={{ fontSize: '20px', color: '#374151', marginBottom: '32px' }}>
+                                    Pesquise e veja a reputação de empresas angolanas
+                                </p>
+                                <button className="btn btn-primary" onClick={() => setPage('empresas')} style={{ fontSize: '18px', padding: '16px 32px' }}>
+                                    Ver Lista de Empresas →
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* CTA Final */}
+                    <div style={{ padding: '80px 20px', background: '#1e3a8a', color: 'white' }}>
+                        <div className="container">
+                            <h2 style={{ fontSize: '36px', fontWeight: 'bold', textAlign: 'center', marginBottom: '48px' }}>
+                                PRONTO PARA COMEÇAR?
+                            </h2>
+
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '32px' }}>
+                                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '32px' }}>
+                                    <div style={{ fontSize: '40px', marginBottom: '16px' }}>👤</div>
+                                    <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>SOU CONSUMIDOR</h3>
+                                    <p style={{ marginBottom: '24px' }}>Faça sua primeira reclamação e ajude a construir um mercado mais justo</p>
+                                    <button className="btn btn-secondary" style={{ width: '100%' }}>Fazer Reclamação</button>
+                                </div>
+
+                                <div style={{ background: 'rgba(255,255,255,0.1)', borderRadius: '12px', padding: '32px' }}>
+                                    <div style={{ fontSize: '40px', marginBottom: '16px' }}>🏢</div>
+                                    <h3 style={{ fontSize: '24px', fontWeight: 'bold', marginBottom: '16px' }}>SOU EMPRESA</h3>
+                                    <p style={{ marginBottom: '24px' }}>Reivindique seu perfil e gerencie sua reputação profissionalmente</p>
+                                    <button className="btn btn-secondary" style={{ width: '100%' }}>Cadastrar Empresa</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {/* Footer */}
+                    <div style={{ padding: '48px 20px', background: '#111827', color: '#9ca3af' }}>
+                        <div className="container" style={{ textAlign: 'center' }}>
+                            <div style={{ fontSize: '20px', fontWeight: 'bold', color: 'white', marginBottom: '16px' }}>
+                                Reclama Angola
+                            </div>
+                            <p style={{ fontSize: '14px', marginBottom: '16px' }}>
+                                © 2024 Reclama Angola. Todos os direitos reservados.
+                            </p>
+                            <p style={{ fontSize: '12px' }}>
+                                Plataforma independente. Dados hospedados em Angola.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        function EmpresasPage({ setPage }) {
+            const empresas = [
+                { id: 1, nome: 'Empresa Alfa', logo: '🏢', categoria: 'Telecomunicações', provincia: 'Luanda', trustScore: 89, verificada: true },
+                { id: 2, nome: 'Empresa Beta', logo: '🛒', categoria: 'E-commerce', provincia: 'Benguela', trustScore: 72, verificada: false },
+                { id: 3, nome: 'Banco Exemplo', logo: '🏦', categoria: 'Bancos', provincia: 'Luanda', trustScore: 85, verificada: true }
+            ];
+
+            return (
+                <div style={{ minHeight: '100vh', background: '#f9fafb', padding: '48px 20px' }}>
+                    <div className="container">
+                        <button onClick={() => setPage('home')} style={{ marginBottom: '32px', color: '#1e3a8a', background: 'none', border: 'none', cursor: 'pointer', fontSize: '16px' }}>
+                            ← Voltar
+                        </button>
+
+                        <h1 style={{ fontSize: '36px', fontWeight: 'bold', color: '#1e3a8a', marginBottom: '32px' }}>
+                            Pesquisar Empresas
+                        </h1>
+
+                        <div className="card" style={{ marginBottom: '32px' }}>
+                            <input type="text" placeholder="🔍 Pesquisar empresa por nome..." />
+                        </div>
+
+                        <div style={{ marginBottom: '24px', color: '#6b7280' }}>
+                            Mostrando {empresas.length} empresas
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                            {empresas.map(emp => (
+                                <div key={emp.id} className="card" style={{ cursor: 'pointer', transition: 'box-shadow 0.2s' }}>
+                                    <div style={{ display: 'flex', alignItems: 'start', gap: '24px' }}>
+                                        <div style={{ fontSize: '48px' }}>{emp.logo}</div>
+
+                                        <div style={{ flex: 1 }}>
+                                            <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '12px' }}>
+                                                <div>
+                                                    <h3 style={{ fontSize: '20px', fontWeight: 'bold', color: '#1f2937', marginBottom: '4px' }}>
+                                                        {emp.nome}
+                                                    </h3>
+                                                    <div style={{ fontSize: '14px', color: '#6b7280' }}>
+                                                        {emp.categoria} • {emp.provincia}
+                                                    </div>
+                                                </div>
+
+                                                <div style={{ textAlign: 'center' }}>
+                                                    <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '4px' }}>
+                                                        <span style={{ fontSize: '24px' }}>⭐</span>
+                                                        <span style={{ fontSize: '28px', fontWeight: 'bold', color: '#1e3a8a' }}>
+                                                            {emp.trustScore}
+                                                        </span>
+                                                    </div>
+                                                    <div style={{ fontSize: '12px', color: '#6b7280' }}>Trust Score</div>
+                                                </div>
+                                            </div>
+
+                                            {emp.verificada && (
+                                                <span className="badge badge-success">✓ Verificada</span>
+                                            )}
+                                        </div>
+
+                                        <button className="btn btn-primary">Ver Perfil</button>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        // Render
+        const root = ReactDOM.createRoot(document.getElementById('root'));
+        root.render(<App />);
+    </script>
+</body>
+</html>
