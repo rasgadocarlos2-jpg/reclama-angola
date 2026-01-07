@@ -1,51 +1,105 @@
 [README.md](https://github.com/user-attachments/files/24459571/README.md)
 # 🇦🇴 Reclama Angola
 
+# 🇦🇴 Reclama Angola
+
 > **A primeira infraestrutura de confiança e reputação empresarial de Angola**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
 [![Made in Angola](https://img.shields.io/badge/Made%20in-Angola-red.svg)](https://angola.ao)
 
-## 📋 Sobre o Projeto
+---
 
-O **Reclama Angola** é uma plataforma digital que conecta consumidores e empresas para construir um mercado mais transparente e responsável em Angola. A plataforma permite que consumidores façam reclamações públicas sobre serviços e produtos, enquanto empresas podem responder e resolver problemas de forma transparente.
+## 📌 Sobre o Projeto
 
-### 🎯 Missão
+O **Reclama Angola** é uma plataforma digital de impacto social que visa **promover transparência, responsabilidade e confiança** no mercado angolano.
 
-Criar uma infraestrutura de confiança que promova a transparência empresarial e empodere consumidores angolanos através de um sistema de reputação público e imparcial.
+A plataforma conecta **consumidores e empresas**, permitindo:
+- Reclamações públicas e rastreáveis
+- Respostas empresariais transparentes
+- Construção de reputação baseada em dados reais
 
-### ⭐ Características Principais
+O objetivo é criar um **sistema público de reputação empresarial**, acessível, imparcial e orientado à resolução de conflitos.
 
-- **🔍 Pesquisa de Empresas** - Base de dados de empresas angolanas com perfis públicos
-- **📝 Reclamações Públicas** - Sistema de registro de reclamações sem cadastro obrigatório
-- **📊 Trust Score** - Indicador de confiança baseado em tempo de resposta, taxa de resolução e avaliações
-- **💬 Resposta Empresarial** - Canal direto entre consumidores e empresas
-- **🛡️ Verificação de Empresas** - Sistema de verificação documental para empresas
-- **📈 Métricas em Tempo Real** - Dashboards com estatísticas e tendências
+---
 
-## 🚀 Demo Online
+## 🎯 Missão
 
-🌐 **[Ver Demo ao Vivo](https://seuusername.github.io/reclama-angola)**
+Criar uma infraestrutura digital de confiança que:
+- Empodere consumidores
+- Incentive boas práticas empresariais
+- Melhore a qualidade dos serviços em Angola
 
-## 📊 Estatísticas da Plataforma
+---
 
-- **12,483** Reclamações registadas
-- **847** Empresas listadas
-- **82%** Taxa de resolução
-- **68%** Empresas verificadas
+## ⭐ Funcionalidades Principais (UI)
+
+### 👤 Consumidores
+- Pesquisa de empresas
+- Visualização de perfis públicos
+- Criação de reclamações
+- Acompanhamento de status
+- Histórico pessoal de reclamações
+
+### 🏢 Empresas
+- Dashboard empresarial
+- Gestão de reclamações
+- Métricas visuais (KPIs)
+- Indicadores de reputação
+- Organização por status e prioridade
+
+### 📊 Plataforma
+- Dashboards visuais
+- Estados padronizados de reclamações
+- Interface moderna e responsiva
+- UX pensada para uso real em Angola
+
+> ⚠️ **Nota:**  
+> Atualmente, o projeto está focado **no UI (Frontend)**.  
+> Backend, autenticação e base de dados ainda **não estão implementados**.
+
+---
+
+## 🚀 Demo Online (Produção)
+
+🌐 **Website oficial:**  
+👉 https://reclamaangola.com  
+
+🌐 **Deploy Vercel:**  
+👉 https://reclama-angola.vercel.app  
+
+---
 
 ## 🛠️ Tecnologias Utilizadas
 
 ### Frontend
-- **React 18** - Biblioteca JavaScript para interfaces
-- **Chart.js** - Visualização de dados e gráficos
-- **CSS3** - Estilização moderna e responsiva
-- **Babel** - Transpilador JavaScript
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- **React 18 (via CDN)**
+- **Chart.js** (visualização de dados)
+- **Babel** (JS moderno no browser)
 
 ### Infraestrutura
-- **GitHub Pages** - Hospedagem gratuita
-- **Netlify** (alternativa) - Deploy contínuo
+- **GitHub** – versionamento
+- **Vercel** – deploy contínuo
+- **Domínio próprio** (Namecheap)
+
+---
+
+## 📦 Estrutura do Projeto
+
+```bash
+reclama-angola/
+│
+├── index.html              # Landing page
+├── login.html              # Login (UI)
+├── dashboard-user.html     # Dashboard do consumidor
+├── dashboard-empresa.html  # Dashboard empresarial
+├── README.md
+└── CONTRIBUTING.md
+
 
 ## 📦 Instalação e Uso
 
@@ -77,58 +131,6 @@ npx serve
 # Acesse: http://localhost:8000
 ```
 
-### Opção 3: Deploy Online
-
-**Netlify Drop:**
-1. Vá em https://app.netlify.com/drop
-2. Arraste o arquivo `index.html`
-3. Site online em segundos!
-
-**GitHub Pages:**
-1. Faça fork deste repositório
-2. Vá em Settings → Pages
-3. Source: `main` branch
-4. Save
-5. Site estará em: `https://seuusername.github.io/reclama-angola`
-
-## 🎨 Funcionalidades Implementadas
-
-### Para Consumidores 👤
-- [x] Pesquisa de empresas por nome, categoria e província
-- [x] Visualização de perfis públicos de empresas
-- [x] Criação de reclamações sem cadastro obrigatório
-- [x] Acompanhamento de status de reclamações
-- [x] Dashboard pessoal com histórico
-- [x] Sistema de avaliação de resoluções
-- [x] Notificações de respostas
-
-### Para Empresas 🏢
-- [x] Dashboard B2B profissional
-- [x] Gestão de reclamações em tempo real
-- [x] Sistema de alertas de prazos
-- [x] Métricas de desempenho (Trust Score, tempo médio, taxa de resolução)
-- [x] Gráficos analíticos (categorias, canais, tendências)
-- [x] Resposta direta a reclamações
-- [x] Perfil público verificado
-
-### Sistema 🔧
-- [x] Sistema de estados padronizado (nova, em análise, respondida, resolvida)
-- [x] Logs de auditoria para todas as ações
-- [x] Filtros e ordenação avançados
-- [x] Design responsivo (mobile, tablet, desktop)
-- [x] Indicadores de ação (alertas urgentes, contadores)
-- [x] Mensagens "próximo passo" em cada etapa
-
-## 📱 Capturas de Tela
-
-### Landing Page
-![Landing Page](https://via.placeholder.com/800x400?text=Landing+Page)
-
-### Pesquisa de Empresas
-![Pesquisa](https://via.placeholder.com/800x400?text=Pesquisa+de+Empresas)
-
-### Dashboard Empresa
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard+B2B)
 
 ## 🗺️ Roadmap
 
@@ -223,13 +225,12 @@ SOFTWARE.
 
 ## 👥 Equipe
 
-- **Fundador & CEO** - [Seu Nome](https://github.com/seuusername)
-- **CTO** - [Nome do CTO](https://github.com/username)
+- **Fundador** - Carlos Rasgado
 
 ## 📞 Contacto
 
-- **Website:** https://reclama-angola.ao (em breve)
-- **Email:** contacto@reclama-angola.ao
+- **Website:** https://reclamaangola.com (em breve)
+- **Email:** contacto@reclamaangola.com
 - **Twitter:** [@ReclamaAngola](https://twitter.com/ReclamaAngola)
 - **LinkedIn:** [Reclama Angola](https://linkedin.com/company/reclama-angola)
 
@@ -252,7 +253,7 @@ SOFTWARE.
 ## 🔐 Segurança
 
 Para reportar vulnerabilidades de segurança, por favor envie email para:
-**security@reclama-angola.ao**
+**security@reclamaangola.com**
 
 **Não** abra issues públicas para questões de segurança.
 
@@ -280,7 +281,7 @@ Este é um projeto de impacto social. Se você representa uma organização ou e
 
 **Feito com ❤️ em Angola 🇦🇴**
 
-[Website](https://reclama-angola.ao) • [Demo](https://seuusername.github.io/reclama-angola) • [Documentação](docs/)
+[Website](https://reclamaangola.com) • [Demo](https://seuusername.github.io/reclama-angola) • [Documentação](docs/)
 
 ⭐ Se este projeto foi útil, considere dar uma estrela!
 
