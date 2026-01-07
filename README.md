@@ -1,6 +1,3 @@
-[README.md](https://github.com/user-attachments/files/24459571/README.md)
-# 🇦🇴 Reclama Angola
-
 # 🇦🇴 Reclama Angola
 
 > **A primeira infraestrutura de confiança e reputação empresarial de Angola**
