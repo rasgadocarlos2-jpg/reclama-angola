@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Meu Painel • Reclama Angola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="dashboard-user.css">
+</head>
+
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">Reclama Angola</div>
+
+    <nav>
+      <a class="active">Minhas Reclamações</a>
+      <a>Histórico</a>
+      <a>Perfil</a>
+      <a>Sair</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <h1>Olá, Carlos</h1>
+      <span class="subtitle">Acompanhe o estado das suas reclamações</span>
+    </header>
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <div class="kpi">
+        <span>Reclamações Ativas</span>
+        <strong>2</strong>
+      </div>
+      <div class="kpi">
+        <span>Respondidas</span>
+        <strong>1</strong>
+      </div>
+      <div class="kpi">
+        <span>Resolvidas</span>
+        <strong>3</strong>
+      </div>
+      <div class="kpi">
+        <span>Tempo Médio de Resposta</span>
+        <strong>48h</strong>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS -->
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Estado das Minhas Reclamações</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Histórico de Reclamações</h3>
+        <canvas id="historyChart"></canvas>
+      </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="list">
+      <h2>Reclamações Recentes</h2>
+
+      <div class="item">
+        <div>
+          <strong>#245 • Banco XYZ</strong>
+          <p>Demora no atendimento</p>
+          <span class="status pending">Em análise</span>
+        </div>
+        <a href="#">Ver detalhes</a>
+      </div>
+
+      <div class="item">
+        <div>
+          <strong>#231 • Operadora ABC</strong>
+          <p>Cobrança indevida</p>
+          <span class="status responded">Respondida</span>
+        </div>
+        <a href="#">Ver detalhes</a>
+      </div>
+
+    </section>
+
+  </main>
+</div>
+
+<script src="dashboard-user.js"></script>
+</body>
+</html>

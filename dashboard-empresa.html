@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard Empresa • Reclama Angola</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="dashboard-empresa.css">
+</head>
+
+<body>
+<div class="app">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="logo">Reclama Angola</div>
+
+    <nav>
+      <a class="active">Visão Geral</a>
+      <a>Reclamações</a>
+      <a>Métricas</a>
+      <a class="locked">Relatórios 🔒</a>
+      <a>Definições</a>
+    </nav>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- TOPBAR -->
+    <header class="topbar">
+      <div>
+        <h1>Empresa Exemplo</h1>
+        <span class="badge verified">Verificada</span>
+      </div>
+
+      <div class="trust-score">
+        Trust Score <strong>4.3 ★</strong>
+      </div>
+    </header>
+
+    <!-- ALERT -->
+    <div class="alert warning">
+      ⚠️ 2 reclamações aguardam resposta há mais de 5 dias
+    </div>
+
+    <!-- KPIs -->
+    <section class="kpis">
+      <div class="kpi">
+        <span>Reclamações Abertas</span>
+        <strong>5</strong>
+      </div>
+      <div class="kpi">
+        <span>Respondidas</span>
+        <strong>12</strong>
+      </div>
+      <div class="kpi">
+        <span>Resolvidas</span>
+        <strong>8</strong>
+      </div>
+      <div class="kpi">
+        <span>Tempo Médio de Resposta</span>
+        <strong>36h</strong>
+      </div>
+    </section>
+
+    <!-- GRÁFICOS -->
+    <section class="charts">
+      <div class="chart-card">
+        <h3>Evolução do Trust Score</h3>
+        <canvas id="trustChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Estado das Reclamações</h3>
+        <canvas id="statusChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Tempo Médio de Resposta</h3>
+        <canvas id="slaChart"></canvas>
+      </div>
+
+      <div class="chart-card">
+        <h3>Volume de Reclamações</h3>
+        <canvas id="volumeChart"></canvas>
+      </div>
+    </section>
+
+    <!-- LISTA -->
+    <section class="list">
+      <h2>Reclamações Pendentes</h2>
+
+      <div class="item">
+        <span>#123 • Cobrança indevida</span>
+        <button>Responder</button>
+      </div>
+
+      <div class="item">
+        <span>#118 • Atendimento demorado</span>
+        <button>Responder</button>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<script src="dashboard-empresa.js"></script>
+</body>
+</html>
